@@ -19,6 +19,6 @@ jobs:
         
       # Print hello
       - name: Print hello
-        run: echo "Hello"
+        run: echo "Hello!"
 
    
