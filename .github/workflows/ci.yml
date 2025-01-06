@@ -15,6 +15,6 @@ jobs:
     - name Pull repo
     uses: actions/checkout@v4
     - name print hello
-    uses: echo "Hello"
+    run: echo "Hello"
 
    
