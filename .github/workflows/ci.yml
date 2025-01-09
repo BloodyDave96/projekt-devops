@@ -16,19 +16,24 @@ jobs:
       # Pull repo
       - name: Pull repo
         uses: actions/checkout@v4
-      
+
+      # Install Docker
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+
       # Build Docker image
       - name: Build Docker image
-        run: |
-          docker build -t my-app:latest .
-        
-      # Print hello
-      - name: Print hello
-        run: echo "Hello"
+        run: docker build -t my-app:latest .
 
-      # Run Trivy for security scan
+      # Security scan with Trivy
       - name: Security scan with Trivy
         run: |
           curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh
-          ./trivy image --exit-code 0 --severity HIGH,CRITICAL my-app:latest
-   
+          trivy image my-app:latest
+
+      # Print hello
+      - name: Print hello
+        run: echo "Hello"
+        
