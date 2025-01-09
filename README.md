@@ -3,7 +3,8 @@ Krótkie wprowadzenie do projektu
 Projekt DevOps polega na stworzeniu prostej aplikacji webowej w Pythonie przy użyciu frameworka Flask. Celem projektu jest wykorzystanie narzędzi DevOps do
 konteneryzacji aplikacji oraz automatyzacji procesu CI/CD.
 Instrukcja uruchamiania aplikacji lokalnie
-1. Sklonuj repozytorium:    git clone <URL do repozytorium>    cd <nazwa-folderu> 2. Zainstaluj zależności:
+1. Sklonuj repozytorium:    git clone <URL do repozytorium>    cd <nazwa-folderu>
+2. Zainstaluj zależności:
    pip install -r requirements.txt
 3.	Uruchom aplikację:
    python main.py
