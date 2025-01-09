@@ -16,7 +16,13 @@ jobs:
       # Pull repo
       - name: Pull repo
         uses: actions/checkout@v4
+      
+      # Build Docker image
+      - name: Build Docker image
+        run: |
+         docker build -t my-app:latest .
         
       # Print hello
       - name: Print hello
         run: echo "Hello"
+        
