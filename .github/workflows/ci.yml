@@ -20,9 +20,15 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-         docker build -t my-app:latest .
+          docker build -t my-app:latest .
         
       # Print hello
       - name: Print hello
         run: echo "Hello"
-        
+
+      # Run Trivy for security scan
+      - name: Security scan with Trivy
+        run: |
+          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh
+          ./trivy image --exit-code 0 --severity HIGH,CRITICAL my-app:latest
+   
